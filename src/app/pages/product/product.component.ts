@@ -9,6 +9,8 @@ export class ProductComponent implements OnInit {
 
   constructor() { }
 
+  value: Date;
+
   ngOnInit() {
   }
 

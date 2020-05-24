@@ -1,0 +1,60 @@
+@import "variables";
+
+:host {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  // grid-template-rows: auto;
+  gap: 20px;
+  column-gap: 20px;
+  grid-template-areas:
+    "description calendar"
+    "description owner";
+}
+
+#product-description {
+  grid-area: description;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .value {
+    span {
+      font-size: 16px;
+    }
+  }
+}
+
+#product-owner {
+  height: 130px;
+  grid-area: owner;
+  .owner {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+}
+
+#product-calendar {
+  grid-area: calendar;
+}
+
+.base {
+  padding: 20px;
+  background-color: $bg-color-first;
+  border-radius: 4px;
+
+  .base-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+}
