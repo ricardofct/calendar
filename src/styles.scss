@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./stylings";
 
 @import "variables";
 
@@ -12,6 +13,9 @@ body {
   background-color: $bg-color-second;
   font-family: Roboto;
   color: $font-color-first;
+  a {
+    color: $font-color-first;
+  }
 }
 
 header,
