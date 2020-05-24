@@ -1,7 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "variables";
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: $bg-color-second;
+  font-family: Roboto;
+  color: $font-color-first;
+}
+
+header,
+main,
+footer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+button,
+a {
+  cursor: pointer;
+  border: 0;
+}
+
+button.cta {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: $cta-color-first;
+  color: $font-color-second;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
 }

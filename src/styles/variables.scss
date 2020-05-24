@@ -1,9 +1,12 @@
-$bg-colors-first: white;
-$bg-colors-second: #f9f9f9;
+$brand-color: #70b597;
 
-$font-colors-first: #353535;
-$font-colors-second: white;
+$font-color-first: #201a30;
+$font-color-second: white;
+$font-color-third: $brand-color;
 
-$ca-colors-first: #f96061;
+$bg-color-first: white;
+$bg-color-second: #f9f9f9;
+$bg-color-third: $font-color-first;
 
-$brand_color: #70b597;
+$cta-color-first: #f96061;
+$cta-color-second: $brand-color;

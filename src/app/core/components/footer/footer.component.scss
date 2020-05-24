@@ -1,0 +1,96 @@
+@import "variables";
+
+:host {
+  padding: 40px 0;
+  display: block;
+  width: 100%;
+  background-color: $bg-color-third;
+
+  * {
+    color: $font-color-second;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col {
+  .title {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .content {
+    display: flex;
+    a,
+    img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 6px;
+        font-size: 14px;
+        a,
+        a i {
+          text-decoration: none;
+          color: $font-color-third;
+
+          .fa-facebook {
+            width: 18px;
+            height: 20px;
+            transform: translateY(5px);
+            background-color: $font-color-third;
+            -webkit-mask: url(./../../../../assets/facebook-f-brands.svg) no-repeat center;
+            mask: url(./../../../../assets/facebook-f-brands.svg) no-repeat center;
+          }
+
+          .fa-insta {
+            width: 18px;
+            height: 20px;
+            transform: translateY(5px);
+            background-color: $font-color-third;
+            -webkit-mask: url(./../../../../assets/instagram-brands.svg) no-repeat center;
+            mask: url(./../../../../assets/instagram-brands.svg) no-repeat center;
+          }
+          &:hover,
+          &:hover i {
+            color: $font-color-second;
+
+            .fa-facebook,
+            .fa-insta {
+              background-color: $font-color-second;
+            }
+          }
+        }
+
+        a i {
+          transform: translateY(2px);
+          font-size: 16px;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}
+
+input {
+  margin-right: 10px;
+  background: #362d50;
+  border: 0;
+  padding: 6px;
+  border-radius: 4px;
+  color: $font-color-second;
+  &::placeholder {
+    font-family: Roboto;
+    color: $font-color-second;
+  }
+}
+
+button {
+  padding: 5px 6px;
+  background-color: $brand-color;
+  border-radius: 4px;
+}
