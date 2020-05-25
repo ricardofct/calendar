@@ -14,6 +14,11 @@
 
 #path {
   grid-area: path;
+  font-size: 14px;
+  a {
+    color: $font-color-third;
+    font-size: 16px;
+  }
 }
 
 #product-description {
@@ -42,7 +47,7 @@
 }
 
 #product-owner {
-  height: 130px;
+  // height: 130px;
   grid-area: owner;
   .owner {
     display: flex;
@@ -62,11 +67,16 @@
       }
     }
   }
-  img {
+  .owner-picture {
     width: 50px;
     height: 50px;
     margin-right: 20px;
     border-radius: 50%;
+  }
+
+  .map {
+    width: calc(100% - 70px);
+    margin-left: 70px;
   }
 }
 
