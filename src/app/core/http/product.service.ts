@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductAvailabilityService {
+export class ProductService {
 
   constructor(
     private http: HttpClient
   ) { }
 
-  private apiUrl = 'items/22/availability';
+  private apiUrl = environment.API + 'items/22/availability';
 
   getAvailability(startAt: Date, endAt: Date): Observable<any> {
     const endpoint = `${this.apiUrl}?start_at=2020/06/01&end_at=2020/06/30&interval=true`;
 
-    return this.http.get<{ data: ProductAvailabilityDTO }>(endpoint)
+    return this.http.get<{ data: ProductAvailabilityDTO }>(endpoint).pipe(
+      map(res => res.data)
+    )
   }
 
 }

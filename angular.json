@@ -69,7 +69,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "calendar-exercise:build"
+            "browserTarget": "calendar-exercise:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

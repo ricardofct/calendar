@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService, ProductAvailabilityDTO } from 'src/app/core/http/product.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -7,11 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private productService: ProductService
+  ) { }
 
-  value: Date;
+  productAvailability$: Observable<ProductAvailabilityDTO>;
+
+  value = [];
+  today = new Date();
+
+  disabledDates
 
   ngOnInit() {
+    this.productAvailability$ = this.productService.
+      getAvailability(this.today, new Date(this.today.getFullYear(), this.today.getMonth() + 1));
+  }
+
+  log(event) {
+    console.log(event);
   }
 
 }

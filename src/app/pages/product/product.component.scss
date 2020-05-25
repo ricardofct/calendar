@@ -2,13 +2,18 @@
 
 :host {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: auto 400px;
   // grid-template-rows: auto;
   gap: 20px;
   column-gap: 20px;
   grid-template-areas:
+    "path path"
     "description calendar"
     "description owner";
+}
+
+#path {
+  grid-area: path;
 }
 
 #product-description {
@@ -46,6 +51,14 @@
 
 #product-calendar {
   grid-area: calendar;
+  .cta-position {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .cta {
+      padding: 10px 20px;
+    }
+  }
 }
 
 .base {

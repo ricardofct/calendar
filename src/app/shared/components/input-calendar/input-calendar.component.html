@@ -1,0 +1,11 @@
+<p-calendar [(ngModel)]="dates" [inline]="true" selectionMode="range" [minDate]="today">
+  <!-- [numberOfMonths]="2" [showOtherMonths]="false" -->
+  <ng-template pTemplate="currwnt-date" let-date>
+    <div
+      [class.range-limit-first]="(date.day === splittedDates.startAtDay && date.month === splittedDates.startAtMonth && date.year === splittedDates.startAtYear)"
+      [class.range-limit-last]="(date.day===splittedDates.endAtDay && date.month===splittedDates.endAtMonth &&
+      date.year===splittedDates.endAtYear)">
+      {{date.day}}
+    </div>
+  </ng-template>
+</p-calendar>

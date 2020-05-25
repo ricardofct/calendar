@@ -31,11 +31,52 @@ a {
   border: 0;
 }
 
-button.cta {
+.cta,
+.cta-border,
+.cta-second,
+.cta-border,
+.cta-second-border {
   padding: 8px;
   border-radius: 4px;
-  background-color: $cta-color-first;
-  color: $font-color-second;
+}
+
+button {
+  &.cta {
+    background-color: $cta-color-first;
+    color: $font-color-second;
+    &:hover {
+      background-color: $cta-color-first-dark;
+    }
+  }
+
+  &.cta-border {
+    background-color: rgba($cta-color-first, 0);
+    color: $cta-color-first;
+    border: 1px solid $cta-color-first;
+    &:hover {
+      background-color: $cta-color-first;
+      color: $font-color-second;
+    }
+  }
+
+  &.cta-second {
+    font-weight: 700;
+    background-color: $cta-color-second;
+    color: $font-color-second;
+    &:hover {
+      // background-color: $cta-color-second-dark;
+    }
+  }
+
+  &.cta-second-border {
+    background-color: rgba($cta-color-second, 0);
+    color: $cta-color-second;
+    border: 1px solid $cta-color-second;
+    &:hover {
+      background-color: $cta-color-second;
+      color: $font-color-second;
+    }
+  }
 }
 
 .ml-10 {

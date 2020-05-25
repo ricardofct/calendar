@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://rnters-items-api-ykhnfsjtqp2dy.herokuapp.com",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}
