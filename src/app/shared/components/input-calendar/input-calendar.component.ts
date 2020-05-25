@@ -16,6 +16,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class InputCalendarComponent implements OnInit, ControlValueAccessor {
   @Output() customChange = new EventEmitter();
 
+  pt: any;
+
   constructor() {
     console.log('InputCalendarComponent')
   }
@@ -81,6 +83,11 @@ export class InputCalendarComponent implements OnInit, ControlValueAccessor {
   calendarTouched = (_: any) => { };
 
   ngOnInit(): void {
+    this.pt = {
+      dayNamesMin: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"],
+      monthNames: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+      weekHeader: 'Wk'
+    };
   }
 
   writeValue(value: any): void {

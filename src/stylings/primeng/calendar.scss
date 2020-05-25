@@ -6,23 +6,17 @@
   table td {
     padding: 0 !important;
   }
+  .ui-datepicker-header {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: $bg-color-second;
+  }
 
-  // .ui-datepicker-group {
-  //   &:first-of-type {
-  //     padding-right: 20px;
-  //     border-right: 1px solid rgba($brand_color, 0.3);
-  //   }
-  //   &:last-of-type {
-  //     padding-left: 20px;
-  //   }
-  // }
+  .ui-datepicker-calendar-container {
+    border: 2px solid $bg-color-second;
+  }
+
   td.ui-datepicker-current-day {
-    // a {
-    //   padding: 0;
-    //   div {
-    //     padding: 0.5em;
-    //   }
-    // }
     .ui-state-active div {
       background-color: rgba($brand-color, 0.2);
     }
