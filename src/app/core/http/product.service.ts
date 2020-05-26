@@ -13,10 +13,12 @@ export class ProductService {
     private http: HttpClient
   ) { }
 
-  private apiUrl = environment.API + 'items/22/availability';
+  private apiUrl = environment.API + '/items/22/availability';
 
-  getAvailability(startAt: Date, endAt: Date): Observable<any> {
-    const endpoint = `${this.apiUrl}?start_at=2020/06/01&end_at=2020/06/30&interval=true`;
+  getAvailability(month: number, year: number): Observable<ProductAvailabilityDTO> {
+    const today = new Date()
+    const endAt = new Date(year, month, 0);
+    const endpoint = `${this.apiUrl}?start_at=${year}/${month < 10 ? `0${month}` : month}/${today.getFullYear() === year && today.getMonth() + 1 === month ? (today.getDate() < 10 ? `0${today.getDate()}` : today.getDate()) : '01'}&end_at=${year}/${month < 10 ? `0${month}` : month}/${endAt.getDate()}&interval=true`;
 
     return this.http.get<{ data: ProductAvailabilityDTO }>(endpoint).pipe(
       map(res => res.data)

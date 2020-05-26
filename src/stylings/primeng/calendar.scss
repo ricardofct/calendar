@@ -17,6 +17,10 @@
   }
 
   td.ui-datepicker-current-day {
+    .ui-state-disabled {
+      padding: 0.64em;
+      background-color: rgba($cta-color-first, 0.2);
+    }
     .ui-state-active div {
       background-color: rgba($brand-color, 0.2);
     }

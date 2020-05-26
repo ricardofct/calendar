@@ -1,4 +1,5 @@
-<p-calendar [(ngModel)]="dates" [inline]="true" selectionMode="range" [minDate]="today" [locale]="pt">
+<p-calendar [(ngModel)]="dates" [inline]="true" selectionMode="range" [minDate]="today" [locale]="pt"
+  [disabledDates]="disabledDates" (onMonthChange)="emitMonthChange($event)">
   <!-- [numberOfMonths]="2" [showOtherMonths]="false" -->
   <ng-template pTemplate="currwnt-date" let-date>
     <div

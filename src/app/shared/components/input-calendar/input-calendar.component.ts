@@ -15,6 +15,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class InputCalendarComponent implements OnInit, ControlValueAccessor {
   @Output() customChange = new EventEmitter();
+  @Output() monthChange = new EventEmitter();
+
+  @Input() disabledDates: Date[]
 
   pt: any;
 
@@ -44,6 +47,10 @@ export class InputCalendarComponent implements OnInit, ControlValueAccessor {
     endAtDay: null,
     endAtMonth: null,
     endAtYear: null,
+  }
+
+  emitMonthChange($event) {
+    this.monthChange.emit($event)
   }
 
   setSplittedDate([startAt, endAt]: Date[]): void {
@@ -84,8 +91,8 @@ export class InputCalendarComponent implements OnInit, ControlValueAccessor {
 
   ngOnInit(): void {
     this.pt = {
-      dayNamesMin: ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"],
-      monthNames: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+      dayNamesMin: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+      monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
       weekHeader: 'Wk'
     };
   }

@@ -44,8 +44,12 @@ button {
   &.cta {
     background-color: $cta-color-first;
     color: $font-color-second;
-    &:hover {
+    &:not(:disabled):hover {
       background-color: $cta-color-first-dark;
+    }
+    &:disabled {
+      background-color: rgba($cta-color-first, 0.5);
+      cursor: default;
     }
   }
 
@@ -79,6 +83,15 @@ button {
   }
 }
 
+.alert {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: $alert-color;
+  color: $font-color-second;
+}
+
 .ml-10 {
   margin-left: 10px;
 }
@@ -87,10 +100,21 @@ button {
   margin-right: 10px;
 }
 
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
 .mb-10 {
   margin-bottom: 10px;
 }
 
 .mb-20 {
   margin-bottom: 20px;
+}
+.mb-40 {
+  margin-bottom: 40px;
 }
