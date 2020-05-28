@@ -44,7 +44,7 @@
 <div id="product-calendar" class="base">
   <p class="base-title">Disponibilidade</p>
   <app-input-calendar [(ngModel)]="value" [disabledDates]="disabledDates" (monthChange)="getAvailability($event)"
-    (customChange)="validateRange($event)">
+    [isLoading]="invalidDatesAreLoading" (customChange)="validateRange($event)">
   </app-input-calendar>
 
   <div *ngIf="invalidRange" class="alert mb-10">

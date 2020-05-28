@@ -1,3 +1,11 @@
 :host {
+  position: relative;
   width: 100%;
+}
+app-loading {
+  position: absolute;
+  left: 3px;
+  top: 34px;
+  width: calc(100% - 6px);
+  height: 216px;
 }

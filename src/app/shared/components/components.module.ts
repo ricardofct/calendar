@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputCalendarModule } from './input-calendar/input-calendar.module';
+import { LoadingModule } from './loading/loading.module';
 
 
 
@@ -8,10 +9,12 @@ import { InputCalendarModule } from './input-calendar/input-calendar.module';
   declarations: [],
   imports: [
     CommonModule,
-    InputCalendarModule
+    InputCalendarModule,
+    LoadingModule
   ],
   exports: [
-    InputCalendarModule
+    InputCalendarModule,
+    LoadingModule
   ]
 })
 export class ComponentsModule { }

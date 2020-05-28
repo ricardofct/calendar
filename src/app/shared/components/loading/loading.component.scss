@@ -1,0 +1,31 @@
+@import "variables";
+
+div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 100px;
+  animation-name: example;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  from {
+    transform: rotateZ(0);
+    height: 100px;
+  }
+  50% {
+    height: 50px;
+  }
+  to {
+    transform: rotateZ(360deg);
+    height: 100px;
+  }
+}

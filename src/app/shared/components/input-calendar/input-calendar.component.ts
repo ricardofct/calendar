@@ -18,6 +18,7 @@ export class InputCalendarComponent implements OnInit, ControlValueAccessor {
   @Output() monthChange = new EventEmitter();
 
   @Input() disabledDates: Date[]
+  @Input() isLoading = false;
 
   pt: any;
 

@@ -4,6 +4,7 @@ import { InputCalendarComponent } from './input-calendar.component';
 
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
+import { LoadingModule } from '../loading/loading.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    CalendarModule
+    CalendarModule,
+    LoadingModule
   ],
   exports: [
     InputCalendarComponent

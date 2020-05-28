@@ -1,5 +1,15 @@
 @import "variables";
 
+p-calendar {
+  position: relative;
+
+  &.loading {
+    .ui-datepicker-calendar-container {
+      background-color: rgba($bg-color-third, 0.4) !important;
+    }
+  }
+}
+
 .ui-calendar {
   width: 100%;
   height: 285px;

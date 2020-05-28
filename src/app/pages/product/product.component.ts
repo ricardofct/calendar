@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, ViewChild, ElementRef } from '@angular/core';
 import { ProductService, ProductAvailabilityDTO } from 'src/app/core/http/product.service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import * as moment from 'moment';
+import { LoadingComponent } from 'src/app/shared/components/loading/loading.component';
 
 @Component({
   selector: 'app-product',
@@ -10,6 +11,9 @@ import * as moment from 'moment';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+
+  @ViewChild(LoadingComponent) loading: LoadingComponent;
+  @ViewChild('ui-calendar') calendar: ElementRef;
 
   constructor(
     private productService: ProductService
@@ -20,6 +24,7 @@ export class ProductComponent implements OnInit {
   value = [];
   today = new Date();
   invalidRange = false;
+  invalidDatesAreLoading = false;
 
   disabledDates: Date[] = [];
 
@@ -30,6 +35,7 @@ export class ProductComponent implements OnInit {
   }
 
   getAvailability({ month, year }: { month: number, year: number }) {
+    this.invalidDatesAreLoading = true;
     this.productAvailability$ = this.productService.
       getAvailability(month, year).pipe(tap(
         availability => {
@@ -49,6 +55,11 @@ export class ProductComponent implements OnInit {
               this.disabledDates = [...this.disabledDates]
             }
           )
+          this.invalidDatesAreLoading = false;
+        },
+        error => {
+          this.invalidDatesAreLoading = false;
+          console.log(error)
         }
       ));
   }
